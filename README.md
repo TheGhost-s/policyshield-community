@@ -1,13 +1,13 @@
-> **Enterprise Pilot Available**: Looking for Autonomous FinOps, Dynamic Pricing Sync & Multi-Cluster Enterprise Support? Request an Enterprise Pilot: [enterprise@policyshield.dev](mailto:enterprise@policyshield.dev)
+> **Enterprise Pilot Available**: Looking for Autonomous FinOps, Dynamic Pricing Sync & Multi-Cluster Enterprise Support? Request an Enterprise Pilot: [euzeex@gmail.com](mailto:euzeex@gmail.com)
 
-# PolicyShield Community Edition - Sub-microsecond (0.44µs) eBPF LSM Sandbox Security for Kubernetes & AI Agents
+# PolicyShield Community Edition - Sub-microsecond (0.44µs) eBPF LSM Sandbox Security for Kubernetes & Container Workloads
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![Kernel](https://img.shields.io/badge/Linux_Kernel-5.15%2B%20%7C%206.x%20%7C%207.x-orange.svg)](https://kernel.org)
 [![eBPF](https://img.shields.io/badge/eBPF-LSM%20%2F%20CO--RE-green.svg)](https://ebpf.io)
-[![Latency](https://img.shields.io/badge/Decision_Latency-0.44%C2%B5s-brightgreen.svg)](docs/ENTERPRISE_BENCHMARKS.md)
+[![Latency](https://img.shields.io/badge/Decision_Latency-0.44%C2%B5s-brightgreen.svg)](https://github.com/TheGhost-s/policyshield)
 
-**PolicyShield Community Edition** is a high-performance, kernel-native security enforcer designed for modern Kubernetes clusters and untrusted AI agent execution sandboxes. By anchoring policy enforcement directly inside the Linux Security Module (LSM) framework at the `bprm_check_security` hook, PolicyShield intercepts process execution (`execve`) inside Ring-0, dropping unauthorized or unbudgeted workloads in **sub-microsecond (0.44µs)** latency—eliminating userspace HTTP webhooks, TLS deadlocks, and network roundtrips entirely.
+**PolicyShield Community Edition** is a high-performance, kernel-native security enforcer designed for modern Kubernetes clusters, microVMs, and untrusted workload execution sandboxes. By anchoring policy enforcement directly inside the Linux Security Module (LSM) framework at the `bprm_check_security` hook, PolicyShield intercepts process execution (`execve`) inside Ring-0, dropping unauthorized or unbudgeted workloads in **sub-microsecond (0.44µs)** latency—eliminating userspace HTTP webhooks, TLS deadlocks, and network roundtrips entirely.
 
 ---
 
@@ -19,7 +19,7 @@ PolicyShield intercepts container execution at the lowest feasible syscall bound
 +-----------------------------------------------------------------------------------+
 |                                 USERSPACE                                         |
 |                                                                                   |
-|  [ Kubernetes Pod / AI Agent ]       [ Container Runtime (containerd / CRI-O) ]  |
+|  [ Kubernetes Pod / Workload ]       [ Container Runtime (containerd / CRI-O) ]  |
 |               |                                           |                       |
 |               | execve("/bin/malicious_bin")              | cgroup v2 creation    |
 |               |                                           v                       |
@@ -65,7 +65,7 @@ The table below demonstrates physical hardware benchmarks conducted on Linux x86
 | **Network & TLS Hops** | **0 Hops (Direct Memory)** | 2-3 Hops (CoreDNS + TLS) | 0 Hops | 0 Hops |
 | **Throughput (Ops/sec)**| **>300,000,000 ops/sec** | ~2,500 ops/sec | N/A | ~8,000,000 ops/sec |
 | **Runtime Process Gating**| **Pre-execution atomic drop** | None (Post-admission blind) | Throttling only (no drop) | Static filter list |
-| **AI Agent Sandbox Defense**| **Instant subprocess freeze** | Unprotected | Memory limit OOM kill | Permissive / Complex |
+| **Sandbox Subprocess Defense**| **Instant subprocess freeze** | Unprotected | Memory limit OOM kill | Permissive / Complex |
 | **Return Error to Bash**| `-EPERM` / `-EDQUOT` | Generic API Server HTTP 500 | Process `SIGKILL` | `SIGSYS` / `EPERM` |
 
 ---
@@ -141,7 +141,7 @@ sudo bpftool prog show name policyshield_bprm
 | **Production SLA & 24/7 Support** | Community | Dedicated Enterprise SLA |
 
 To request enterprise pilots or private demonstrations:
-* **Email:** [enterprise@policyshield.dev](mailto:enterprise@policyshield.dev)
+* **Email:** [euzeex@gmail.com](mailto:euzeex@gmail.com)
 * **Organization:** [PolicyShield Enterprise](https://github.com/TheGhost-s/policyshield)
 
 ---
